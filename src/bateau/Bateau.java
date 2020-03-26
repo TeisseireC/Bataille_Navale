@@ -3,12 +3,12 @@ package bateau;
 public class Bateau {
 
     private int[] startPosition = new int[2];
-    private int modele;
+    private int model;
     private String direction;
 
-    public Bateau (int x, int y, int modele, String direction){
+    public Bateau (int x, int y, int model, String direction){
         setDirection(direction);
-        setModele(modele);
+        setModel(model);
         setStartPosition(x, y);
     }
 
@@ -17,8 +17,8 @@ public class Bateau {
         this.startPosition[1] = y;
     }
 
-    public void setModele(int modele) {
-        this.modele = modele;
+    public void setModel(int model) {
+        this.model = model;
     }
 
     public void setDirection(String direction) {
@@ -29,8 +29,8 @@ public class Bateau {
         return startPosition;
     }
 
-    public int getModele() {
-        return modele;
+    public int getModel() {
+        return model;
     }
 
     public String getDirection() {

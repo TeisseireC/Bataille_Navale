@@ -10,10 +10,10 @@ public class app {
         Bateau bateauDeux2 = new Bateau(2,2,2, "Droite");
         Bateau bateauTrois1 = new Bateau(2, 1, 3, "Droite");
         Bateau bateauQuatre = new Bateau(7, 1, 4, "Gauche");
-        System.out.println(flotte.addBateau(bateauDeux1));
-        System.out.println(flotte.addBateau(bateauDeux2));
-        System.out.println(flotte.addBateau(bateauTrois1));
-        System.out.println(flotte.addBateau(bateauQuatre));
+        System.out.println(flotte.addBoat(bateauDeux1));
+        System.out.println(flotte.addBoat(bateauDeux2));
+        System.out.println(flotte.addBoat(bateauTrois1));
+        System.out.println(flotte.addBoat(bateauQuatre));
 
     }
 }
