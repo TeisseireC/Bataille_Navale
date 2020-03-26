@@ -9,7 +9,7 @@ public class Bateau {
     private String direction;
 
     public Bateau (int x, int y, int model, String direction){
-        setCoordonnes(new Coordonnes(x,y));
+        setStartPosition(new Coordonnes(x,y));
         setDirection(direction);
         setModel(model);
     }
@@ -22,7 +22,7 @@ public class Bateau {
         this.direction = direction;
     }
 
-    public void setCoordonnes(Coordonnes coordonnes){
+    public void setStartPosition(Coordonnes coordonnes){
         this.startPosition = coordonnes;
     }
 
