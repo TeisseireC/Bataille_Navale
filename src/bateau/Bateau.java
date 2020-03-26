@@ -2,7 +2,7 @@ package bateau;
 
 public class Bateau {
 
-    private int[] startPosition;
+    private int[] startPosition = new int[2];
     private int modele;
     private String direction;
 
