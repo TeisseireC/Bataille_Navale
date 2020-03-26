@@ -33,7 +33,7 @@ public class Flotte {
                     if (flotte.get(i).getModele() == 2) {   // On compte le nombre de bateaux de longueur 2 déjà présent
                         tmpModeleCount++;
                     }
-                    if (tmpModeleCount == 2) { // Si il y en a déjà 2 alors on ne peux pas rajouter
+                    if (tmpModeleCount >= 2) { // Si il y en a déjà 2 alors on ne peux pas rajouter
                         canAdd = false;
                     }
                 } else {  // Si on veux ajouter un bateau d'une autre longueur
@@ -54,22 +54,22 @@ public class Flotte {
 
         switch (direction) {
             case "Haut":
-                if (y - modele < 0) {
+                if (y - modele < 1 || (x<1 || x>10)) {
                     canAdd = false;
                 }
                 break;
             case "Bas":
-                if (y + modele > 10) {
+                if (y + modele > 10 || (x<1 || x>10)) {
                     canAdd = false;
                 }
                 break;
             case "Gauche":
-                if (x - modele < 0) {
+                if (x - modele < 1 || (y<1 || y>10)) {
                     canAdd = false;
                 }
                 break;
             case "Droite":
-                if (x + modele > 10) {
+                if (x + modele > 10 || (y<1 || y>10)) {
                     canAdd = false;
                 }
                 break;
@@ -86,25 +86,25 @@ public class Flotte {
                 switch (bateau.getDirection()){
                     case "Haut" :
                         coordy[j] = y-j;
-                        if (coordy[j] == y){
+                        if (coordy[j] == y && bateau.getStartPosition()[0] == x){
                             canAdd = false;
                         }
                         break;
                     case "Bas" :
                         coordy[j] = y+j;
-                        if (coordy[j] == y){
+                        if (coordy[j] == y && bateau.getStartPosition()[0] == x){
                             canAdd = false;
                         }
                         break;
                     case "Gauche" :
                         coordx[j] = x-j;
-                        if (coordx[j] == x){
+                        if (coordx[j] == x && bateau.getStartPosition()[1] == y){
                             canAdd = false;
                         }
                         break;
                     case "Droite" :
                         coordx[j] = x+j;
-                        if (coordx[j] == x){
+                        if (coordx[j] == x && bateau.getStartPosition()[1] == y){
                             canAdd = false;
                         }
                         break;

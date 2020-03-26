@@ -6,7 +6,7 @@ public class Bateau {
     private int modele;
     private String direction;
 
-    Bateau (int x, int y, int modele, String direction){
+    public Bateau (int x, int y, int modele, String direction){
         setDirection(direction);
         setModele(modele);
         setStartPosition(x, y);
