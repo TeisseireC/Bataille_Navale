@@ -1,20 +1,17 @@
 package bateau;
 
+import coordonnes.Coordonnes;
+
 public class Bateau {
 
-    private int[] startPosition = new int[2];
+    private Coordonnes startPosition;
     private int model;
     private String direction;
 
     public Bateau (int x, int y, int model, String direction){
+        setCoordonnes(new Coordonnes(x,y));
         setDirection(direction);
         setModel(model);
-        setStartPosition(x, y);
-    }
-
-    public void setStartPosition(int x, int y) {
-        this.startPosition[0] = x;
-        this.startPosition[1] = y;
     }
 
     public void setModel(int model) {
@@ -25,7 +22,11 @@ public class Bateau {
         this.direction = direction;
     }
 
-    public int[] getStartPosition() {
+    public void setCoordonnes(Coordonnes coordonnes){
+        this.startPosition = coordonnes;
+    }
+
+    public Coordonnes getStartPosition() {
         return startPosition;
     }
 
