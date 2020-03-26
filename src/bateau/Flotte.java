@@ -23,7 +23,7 @@ public class Flotte {
         return resultat;
     }
 
-    public boolean verifyModele(int modele){
+    public boolean verifyModele(int modele){ // Vérifie si la taille du bateau existe déja ou pas
         boolean canAdd = true; // Variable pour voir si on peux ajouter
 
         if (flotte.size() < 5) { // Si la flotte n'est pas pleine
@@ -52,7 +52,7 @@ public class Flotte {
     public boolean verifyCoord(int x,int y,int modele, String direction){
         boolean canAdd = true;
 
-        switch (direction) {
+        switch (direction) {    // Switch qui vérifie si on ne dépasse pas de la map
             case "Haut":
                 if (y - modele < 1 || (x<1 || x>10)) {
                     canAdd = false;
@@ -78,34 +78,63 @@ public class Flotte {
         }
 
         for (int i = 0; i < flotte.size(); i++) {    // Parcours de la flotte
-            Bateau bateau = flotte.get(i);
-            int[] coordx = new int[5];
-            int[] coordy = new int[5];
+            Bateau bateau = flotte.get(i);  // OldBoats
+            int[] coordxOldBoat = new int[5];
+            int[] coordyOldBoat = new int[5];
 
-            for(int j=0; j<bateau.getModele(); j++){
+            int[] coordxNewBoat = new int[5];
+            int[] coordyNewBoat = new int[5];
+
+            for(int j=0; j<modele; j++) {   // Boucle qui définie tout les points du nouveau bateau
+                switch (direction) {
+                    case "Haut":
+                        coordyNewBoat[j] = y - j;
+                        break;
+                    case "Bas":
+                        coordyNewBoat[j] = y + j;
+                        break;
+                    case "Gauche":
+                        coordxNewBoat[j] = x- j;
+                        break;
+                    case "Droite":
+                        coordxNewBoat[j] = x+ j;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            for(int j=0; j<bateau.getModele(); j++){    // Boucle qui vérifie si les points du nouveau bateau ne sont pas en confli avec ceux des anciens
                 switch (bateau.getDirection()){
                     case "Haut" :
-                        coordy[j] = y-j;
-                        if (coordy[j] == y && bateau.getStartPosition()[0] == x){
-                            canAdd = false;
+                        coordyOldBoat[j] = bateau.getStartPosition()[1]-j;  // Calcul position Old boat
+                        for (int k=0; k<modele; k++){   // Boucle de vérification de la position de l'old boat contre celles du new boat
+                            if (coordyOldBoat[j] == coordyNewBoat[k] && bateau.getStartPosition()[0] == x){
+                                canAdd = false;
+                            }
                         }
                         break;
                     case "Bas" :
-                        coordy[j] = y+j;
-                        if (coordy[j] == y && bateau.getStartPosition()[0] == x){
-                            canAdd = false;
+                        coordyOldBoat[j] = bateau.getStartPosition()[1]+j;  // Same here, juste le calcul qui change
+                        for (int k=0; k<modele; k++){
+                            if (coordyOldBoat[j] == coordyNewBoat[k] && bateau.getStartPosition()[0] == x){
+                                canAdd = false;
+                            }
                         }
                         break;
                     case "Gauche" :
-                        coordx[j] = x-j;
-                        if (coordx[j] == x && bateau.getStartPosition()[1] == y){
-                            canAdd = false;
+                        coordxOldBoat[j] = bateau.getStartPosition()[0]-j;
+                        for (int k=0; k<modele; k++){
+                            if (coordxOldBoat[j] == coordxNewBoat[k] && bateau.getStartPosition()[1] == y){
+                                canAdd = false;
+                            }
                         }
                         break;
                     case "Droite" :
-                        coordx[j] = x+j;
-                        if (coordx[j] == x && bateau.getStartPosition()[1] == y){
-                            canAdd = false;
+                        coordxOldBoat[j] = bateau.getStartPosition()[0]+j;
+                        for (int k=0; k<modele; k++){
+                            if (coordxOldBoat[j] == coordxNewBoat[k] && bateau.getStartPosition()[1] == y){
+                                canAdd = false;
+                            }
                         }
                         break;
                     default : break;
