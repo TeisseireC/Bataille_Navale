@@ -6,8 +6,15 @@ public class Bateau {
     private int modele;
     private String direction;
 
-    public void setStartPosition(int[] startPosition) {
-        this.startPosition = startPosition;
+    Bateau (int x, int y, int modele, String direction){
+        setDirection(direction);
+        setModele(modele);
+        setStartPosition(x, y);
+    }
+
+    public void setStartPosition(int x, int y) {
+        this.startPosition[0] = x;
+        this.startPosition[1] = y;
     }
 
     public void setModele(int modele) {
