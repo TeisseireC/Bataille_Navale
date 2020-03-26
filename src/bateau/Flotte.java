@@ -10,7 +10,7 @@ public class Flotte {
         String result;
 
         if (verifyModel(bateau.getModel())) {
-            if (verifyCoord(bateau.getStartPosition()[0], bateau.getStartPosition()[1], bateau.getModel(), bateau.getDirection())) {
+            if (verifyCoord(bateau)) {
                 flotte.add(bateau);
                 result = "Bateau ajouté";
             } else {
@@ -54,33 +54,30 @@ public class Flotte {
     }
 
     /**
-     * @param x
-     * @param y
-     * @param model
-     * @param direction
+     * @param newBoat
      * @return
      */
-    public boolean verifyCoord(int x, int y, int model, String direction) {
+    public boolean verifyCoord(Bateau newBoat) {
         boolean canAdd = true;
 
-        switch (direction) {
+        switch (newBoat.getDirection()) {
             case "Haut":
-                if (y - model < 1 || (x < 1 || x > 10)) {
+                if (newBoat.getStartPosition()[1] - newBoat.getModel() < 1 || (newBoat.getStartPosition()[0] < 1 || newBoat.getStartPosition()[0] > 10)) {
                     canAdd = false;
                 }
                 break;
             case "Bas":
-                if (y + model > 10 || (x < 1 || x > 10)) {
+                if (newBoat.getStartPosition()[1] + newBoat.getModel() > 10 || (newBoat.getStartPosition()[0] < 1 || newBoat.getStartPosition()[0] > 10)) {
                     canAdd = false;
                 }
                 break;
             case "Gauche":
-                if (x - model < 1 || (y < 1 || y > 10)) {
+                if (newBoat.getStartPosition()[0] - newBoat.getModel() < 1 || (newBoat.getStartPosition()[0] < 1 || newBoat.getStartPosition()[0] > 10)) {
                     canAdd = false;
                 }
                 break;
             case "Droite":
-                if (x + model > 10 || (y < 1 || y > 10)) {
+                if (newBoat.getStartPosition()[0] + newBoat.getModel() > 10 || (newBoat.getStartPosition()[0] < 1 || newBoat.getStartPosition()[0] > 10)) {
                     canAdd = false;
                 }
                 break;
@@ -89,61 +86,61 @@ public class Flotte {
         }
 
         // OldBoats
-        for (Bateau bateau : flotte) {
+        for (Bateau oldBoat : flotte) {
             int[] coordxOldBoat = new int[5];
             int[] coordyOldBoat = new int[5];
 
             int[] coordxNewBoat = new int[5];
             int[] coordyNewBoat = new int[5];
 
-            for (int j = 0; j < model; j++) {
-                switch (direction) {
+            for (int j = 0; j < newBoat.getModel(); j++) {
+                switch (newBoat.getDirection()) {
                     case "Haut":
-                        coordyNewBoat[j] = y - j;
+                        coordyNewBoat[j] = newBoat.getStartPosition()[1] - j;
                         break;
                     case "Bas":
-                        coordyNewBoat[j] = y + j;
+                        coordyNewBoat[j] = newBoat.getStartPosition()[1] + j;
                         break;
                     case "Gauche":
-                        coordxNewBoat[j] = x - j;
+                        coordxNewBoat[j] = newBoat.getStartPosition()[0] - j;
                         break;
                     case "Droite":
-                        coordxNewBoat[j] = x + j;
+                        coordxNewBoat[j] = newBoat.getStartPosition()[0] + j;
                         break;
                     default:
                         break;
                 }
             }
-            for (int j = 0; j < bateau.getModel(); j++) {
-                switch (bateau.getDirection()) {
+            for (int j = 0; j < oldBoat.getModel(); j++) {
+                switch (oldBoat.getDirection()) {
                     case "Haut":
-                        coordyOldBoat[j] = bateau.getStartPosition()[1] - j;
-                        for (int k = 0; k < model; k++) {
-                            if (coordyOldBoat[j] == coordyNewBoat[k] && bateau.getStartPosition()[0] == x) {
+                        coordyOldBoat[j] = oldBoat.getStartPosition()[1] - j;
+                        for (int k = 0; k < newBoat.getModel(); k++) {
+                            if (coordyOldBoat[j] == coordyNewBoat[k] && oldBoat.getStartPosition()[0] == newBoat.getStartPosition()[0]) {
                                 canAdd = false;
                             }
                         }
                         break;
                     case "Bas":
-                        coordyOldBoat[j] = bateau.getStartPosition()[1] + j;
-                        for (int k = 0; k < model; k++) {
-                            if (coordyOldBoat[j] == coordyNewBoat[k] && bateau.getStartPosition()[0] == x) {
+                        coordyOldBoat[j] = oldBoat.getStartPosition()[1] + j;
+                        for (int k = 0; k < newBoat.getModel(); k++) {
+                            if (coordyOldBoat[j] == coordyNewBoat[k] && oldBoat.getStartPosition()[0] == newBoat.getStartPosition()[0]) {
                                 canAdd = false;
                             }
                         }
                         break;
                     case "Gauche":
-                        coordxOldBoat[j] = bateau.getStartPosition()[0] - j;
-                        for (int k = 0; k < model; k++) {
-                            if (coordxOldBoat[j] == coordxNewBoat[k] && bateau.getStartPosition()[1] == y) {
+                        coordxOldBoat[j] = oldBoat.getStartPosition()[0] - j;
+                        for (int k = 0; k < newBoat.getModel(); k++) {
+                            if (coordxOldBoat[j] == coordxNewBoat[k] && oldBoat.getStartPosition()[1] == newBoat.getStartPosition()[1]) {
                                 canAdd = false;
                             }
                         }
                         break;
                     case "Droite":
-                        coordxOldBoat[j] = bateau.getStartPosition()[0] + j;
-                        for (int k = 0; k < model; k++) {
-                            if (coordxOldBoat[j] == coordxNewBoat[k] && bateau.getStartPosition()[1] == y) {
+                        coordxOldBoat[j] = oldBoat.getStartPosition()[0] + j;
+                        for (int k = 0; k < newBoat.getModel(); k++) {
+                            if (coordxOldBoat[j] == coordxNewBoat[k] && oldBoat.getStartPosition()[1] == newBoat.getStartPosition()[1]) {
                                 canAdd = false;
                             }
                         }
