@@ -1,40 +1,45 @@
 package bateau;
 
 import coordonnes.Coordonnes;
+import coordonnes.Direction;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Bateau {
 
-    private Coordonnes startPosition;
-    private int model;
-    private String direction;
+    private List<Coordonnes> coordonnes;
+    private int taille;
+    private Direction direction;
 
-    public Bateau (int x, int y, int model, String direction){
-        setStartPosition(new Coordonnes(x,y));
-        setDirection(direction);
-        setModel(model);
+    public Bateau (Coordonnes startPosition,int taille, Direction direction){
+        this.coordonnes = new ArrayList<Coordonnes>();
+        this.coordonnes.add(startPosition);
+        this.taille = taille;
+        setAllCoodinate(direction);
     }
 
-    public void setModel(int model) {
-        this.model = model;
+    private void setAllCoodinate(Direction direction){
+        int startAbscisse = this.coordonnes.get(0).getAbscisse();
+        int startOrdonnee = this.coordonnes.get(0).getOrdonnee();
+
+        for (int i=1; i<this.taille; i++){
+            switch (direction){
+                case HAUT : this.coordonnes.add(new Coordonnes(startAbscisse , startOrdonnee - i));
+                    break;
+                case BAS:  this.coordonnes.add(new Coordonnes(startAbscisse , startOrdonnee + i));
+                    break;
+                case GAUCHE:  this.coordonnes.add(new Coordonnes(startAbscisse - i , startOrdonnee));
+                    break;
+                case DROITE:  this.coordonnes.add(new Coordonnes(startAbscisse + i , startOrdonnee));
+                    break;
+            }
+        }
+
     }
 
-    public void setDirection(String direction) {
-        this.direction = direction;
-    }
+    public boolean isOnCoordinate(Coordonnes coordonnee) {
 
-    public void setStartPosition(Coordonnes coordonnes){
-        this.startPosition = coordonnes;
-    }
-
-    public Coordonnes getStartPosition() {
-        return startPosition;
-    }
-
-    public int getModel() {
-        return model;
-    }
-
-    public String getDirection() {
-        return direction;
+        return this.coordonnes.contains(coordonnee);
     }
 }

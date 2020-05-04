@@ -2,39 +2,28 @@ package coordonnes;
 
 public class Coordonnes {
 
-    private int x;
-    private int y;
+    private int abscisse;
+    private int ordonnee;
 
-    public Coordonnes(int x,int y){
-        if(coordoneesBetween1and10(x,y)){
-            this.setX(x);
-            this.setY(y);
-        }else{
-            System.out.println("les coordonnées ne sont pas correct");
-        }
+    public Coordonnes(int abscisse, int ordonnee){
+        this.abscisse = abscisse;
+        this.ordonnee = ordonnee;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public int getAbscisse() {
+        return abscisse;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public int getOrdonnee() {
+        return ordonnee;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public boolean coordoneesBetween1and10(int x,int y){
-        if(x<1 || x>10 || y<1 || y>10){
-            return false;
-        }else{
+    @Override
+    public boolean equals(Object coordonee) {
+        if ((coordonee instanceof Coordonnes) && (((Coordonnes) coordonee).getAbscisse() == (this.abscisse) && ((Coordonnes) coordonee).getOrdonnee() == (this.ordonnee))) {
             return true;
+        } else {
+            return false;
         }
     }
 }
