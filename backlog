@@ -1,0 +1,9 @@
+1. Transformer le projet en MVC
+2. Implementer Junit au projet et faire des tests
+3. Mettre une variable pour définir la grille
+4. Reduire la taille des méthodes et les optimiser
+5. Ajouter une IA capable de placer des bateaux 
+6. Ajouter la possibilité de toucher ou rater un bateau
+7. Ajouter la fonctionnalité "Couler" aux bateaux
+8. Supprimer les bateaux coulers
+9. Ajouter un historique de tir pour ne pas tirer 2 fois au même endroit
