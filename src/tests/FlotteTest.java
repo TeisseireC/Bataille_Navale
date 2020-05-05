@@ -1,22 +1,19 @@
 package tests;
 
-import bateau.Bateau;
-import bateau.Flotte;
-import coordonnes.Coordonnes;
-import coordonnes.Direction;
+import Modele.bateau.Bateau;
+import Modele.bateau.Flotte;
+import Modele.coordonnes.Coordonnes;
+import Modele.coordonnes.Direction;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class FlotteTest {
     Coordonnes a1 = new Coordonnes(1,1);
-    Coordonnes a4= new Coordonnes(1,1);
-    Coordonnes b9 = new Coordonnes(1,1);
-    Coordonnes d5 = new Coordonnes(1,1);
-    Coordonnes d2 = new Coordonnes(1,1);
+    Coordonnes a4= new Coordonnes(1,4);
+    Coordonnes b9 = new Coordonnes(2,9);
+    Coordonnes d5 = new Coordonnes(4,5);
+    Coordonnes d2 = new Coordonnes(4,2);
 
     Bateau boat1 = new Bateau(a1,3, Direction.BAS);
     Bateau boat2 = new Bateau(a4,3, Direction.DROITE);
@@ -31,6 +28,7 @@ class FlotteTest {
         assertTrue(createArmy.addBoat(boat1));
         assertTrue(createArmy.addBoat(boat2));
         assertTrue(createArmy.addBoat(boat3));
+        assertFalse(createArmy.addBoat(boat5));
     }
 
     @Test

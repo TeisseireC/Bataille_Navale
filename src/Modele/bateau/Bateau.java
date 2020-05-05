@@ -1,7 +1,7 @@
-package bateau;
+package Modele.bateau;
 
-import coordonnes.Coordonnes;
-import coordonnes.Direction;
+import Modele.coordonnes.Coordonnes;
+import Modele.coordonnes.Direction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +38,15 @@ public class Bateau {
 
     public boolean isOnCoordinate(Coordonnes coordonnee) {
         return this.coordonnes.contains(coordonnee);
+    }
+
+    // Risqué mais je ne vois pas comment faire
+    public List<Coordonnes> getCoordonnes(){
+        return this.coordonnes;
+    }
+
+    public int getTaille(){
+        return this.taille;
     }
 
     @Override

@@ -1,8 +1,8 @@
 package tests;
 
-import bateau.Bateau;
-import coordonnes.Coordonnes;
-import coordonnes.Direction;
+import Modele.bateau.Bateau;
+import Modele.coordonnes.Coordonnes;
+import Modele.coordonnes.Direction;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

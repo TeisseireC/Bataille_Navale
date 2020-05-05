@@ -1,4 +1,4 @@
-package coordonnes;
+package Modele.coordonnes;
 
 public enum Direction {
     DROITE,

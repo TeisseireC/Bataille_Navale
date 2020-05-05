@@ -1,8 +1,6 @@
 package tests;
 
-import coordonnes.Coordonnes;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import Modele.coordonnes.Coordonnes;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
