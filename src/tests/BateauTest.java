@@ -1,5 +1,6 @@
-package bateau;
+package tests;
 
+import bateau.Bateau;
 import coordonnes.Coordonnes;
 import coordonnes.Direction;
 import org.junit.jupiter.api.Test;

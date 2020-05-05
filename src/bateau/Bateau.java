@@ -8,12 +8,10 @@ import java.util.List;
 
 public class Bateau {
 
-    private List<Coordonnes> coordonnes;
+    private List<Coordonnes> coordonnes = new ArrayList<>();
     private int taille;
-    private Direction direction;
 
     public Bateau (Coordonnes startPosition,int taille, Direction direction){
-        this.coordonnes = new ArrayList<Coordonnes>();
         this.coordonnes.add(startPosition);
         this.taille = taille;
         setAllCoodinate(direction);
@@ -39,7 +37,15 @@ public class Bateau {
     }
 
     public boolean isOnCoordinate(Coordonnes coordonnee) {
-
         return this.coordonnes.contains(coordonnee);
+    }
+
+    @Override
+    public boolean equals(Object boat) {
+        if ((boat instanceof Bateau) && (((Bateau) boat).taille == (this.taille) && ((Bateau) boat).coordonnes == (this.coordonnes))) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
