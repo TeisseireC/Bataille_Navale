@@ -1,11 +1,12 @@
 
 Transversal -> Implementer Junit au projet et faire des tests
-2. Créer une flotte
-3. Définir la grille
-4. Reduire la taille des méthodes et les optimiser
-5. Ajouter une IA capable de placer des bateaux 
-6. Ajouter la possibilité de toucher ou rater un bateau
-7. Ajouter la fonctionnalité "Couler" aux bateaux
-8. Supprimer les bateaux coulers
-9. Ajouter un historique de tir pour ne pas tirer 2 fois au même endroit
-10. Transformer le projet en MVC
+Transversal -> Reduire la taille des méthodes et les optimiser
+
+. Créer une flotte (done)
+. Définir la grille (WIP)
+. Ajouter une IA capable de placer des bateaux 
+. Ajouter la possibilité de toucher ou rater un bateau
+. Ajouter la fonctionnalité "Couler" aux bateaux
+. Supprimer les bateaux coulers
+. Ajouter un historique de tir pour ne pas tirer 2 fois au même endroit
+. Transformer le projet en MVC
