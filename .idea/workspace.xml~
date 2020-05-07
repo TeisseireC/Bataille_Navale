@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="671ab91f-f3e8-4e0b-9d8f-3b395116a79b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/BatailleNavale/Modele/bateau/Bateau.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BatailleNavale/Modele/bateau/Flotte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BatailleNavale/Modele/coordonnes/Coordonnes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BatailleNavale/tests/FlotteTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modele/bateau/Bateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modele/bateau/Boat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modele/bateau/Flotte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modele/bateau/Fleet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modele/coordonnes/Coordonnes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modele/coordonnes/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modele/coordonnes/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modele/coordonnes/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/BateauTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/BoatTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/CoordonnesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/CoordinateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/FlotteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/FleetTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bRUu2N4uyBK7KVchtGIzNsDYc1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="tests" />
+      <recent name="bateau" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.FleetTest">
+    <configuration name="BoatTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BatailleNavale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoatTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoatTest.createBoat" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BatailleNavale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.BoatTest" />
+      <option name="METHOD_NAME" value="createBoat" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoordinateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BatailleNavale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CoordinateTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FleetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BatailleNavale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FleetTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FleetTest.createFlotte" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BatailleNavale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FleetTest" />
+      <option name="METHOD_NAME" value="createFlotte" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FleetTest" />
+        <item itemvalue="JUnit.CoordinateTest" />
+        <item itemvalue="JUnit.BoatTest" />
+        <item itemvalue="JUnit.BoatTest.createBoat" />
+        <item itemvalue="JUnit.FleetTest.createFlotte" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="671ab91f-f3e8-4e0b-9d8f-3b395116a79b" name="Default Changelist" comment="" />
+      <created>1588594622800</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588594622800</updated>
+      <workItem from="1588594656846" duration="8232000" />
+      <workItem from="1588661411722" duration="13087000" />
+      <workItem from="1588833298958" duration="7145000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="524" y="138" key="#Project_Structure" timestamp="1588597077380">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="524" y="138" key="#Project_Structure/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588597077380" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1588836741187">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588836741187" />
+    <state x="545" y="515" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1588668843739">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="545" y="515" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588668843739" />
+    <state x="242" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588840336336">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="242" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588840336336" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588834304728">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588834304728" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588594779426">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588594779426" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1588840443883">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588840443883" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1588840443882">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588840443882" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1588840443882">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588840443882" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1588840443882">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588840443882" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1588839619663">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588839619663" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1588839619662">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588839619662" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1588839619662">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588839619662" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1588839619662">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588839619662" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1588597011445">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588597011445" />
+    <state x="519" y="623" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1588597108229">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="519" y="623" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588597108229" />
+    <state x="586" y="537" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1588668849866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="586" y="537" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588668849866" />
+    <state x="690" y="295" key="extract.method.dialog" timestamp="1588839569878">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="295" key="extract.method.dialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1588839569878" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="((java.util.ArrayList)((Bateau)((ArrayList)((Flotte)this).flotte).get(0)).coordonnes).get(2)" custom="Modele.bateau.Bateau,java.util.ArrayList,Modele.bateau.Flotte" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

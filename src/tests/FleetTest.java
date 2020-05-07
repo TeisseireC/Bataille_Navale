@@ -3,44 +3,43 @@ package tests;
 import Exceptions.IllegalCoordinate;
 import Exceptions.IllegalShipPlacement;
 import Exceptions.NumberOfShipSizeExceeded;
-import Modele.bateau.Bateau;
-import Modele.bateau.Flotte;
-import Modele.coordonnes.Coordonnes;
+import Modele.bateau.Boat;
+import Modele.bateau.Fleet;
+import Modele.coordonnes.Coordinate;
 import Modele.coordonnes.Direction;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FlotteTest {
-    Coordonnes a1 = new Coordonnes(1,1);
-    Coordonnes a4= new Coordonnes(1,4);
-    Coordonnes b9 = new Coordonnes(2,9);
-    Coordonnes d5 = new Coordonnes(4,5);
-    Coordonnes d2 = new Coordonnes(4,2);
+class FleetTest {
+    Coordinate a1 = new Coordinate(1,1);
+    Coordinate a4= new Coordinate(1,4);
+    Coordinate b9 = new Coordinate(2,9);
+    Coordinate d5 = new Coordinate(4,5);
+    Coordinate d2 = new Coordinate(4,2);
 
-    Bateau boat1;
-    Bateau boat2;
-    Bateau boat3;
-    Bateau boat4;
-    Bateau boat5;
+    Boat boat1;
+    Boat boat2;
+    Boat boat3;
+    Boat boat4;
+    Boat boat5;
     {
         try {
-            boat1 = new Bateau(a1,3, Direction.BAS);
-            boat2 = new Bateau(a4,3, Direction.DROITE);
-            boat3 = new Bateau(b9,4, Direction.HAUT);
-            boat4 = new Bateau(d5,2, Direction.GAUCHE);
-            boat5 = new Bateau(d2,3, Direction.DROITE);
+            boat1 = new Boat(a1,3, Direction.BOTTOM);
+            boat2 = new Boat(a4,3, Direction.RIGHT);
+            boat3 = new Boat(b9,4, Direction.UP);
+            boat4 = new Boat(d5,2, Direction.LEFT);
+            boat5 = new Boat(d2,3, Direction.RIGHT);
         } catch (IllegalCoordinate illegalCoordinate) {
             fail();
         }
     }
 
-    Flotte createArmy = new Flotte();
-    Flotte armyContainsBoat = new Flotte();
+    Fleet createArmy = new Fleet();
+    Fleet armyContainsBoat = new Fleet();
 
     @Test
-    void createFlotte(){
+    void createFleet(){
         try {
             createArmy.addBoat(boat1);
             createArmy.addBoat(boat2);

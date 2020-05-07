@@ -6,49 +6,49 @@ import Exceptions.NumberOfShipSizeExceeded;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Flotte {
-    private List<Bateau> flotte = new ArrayList<>();
+public class Fleet {
+    private List<Boat> boatList = new ArrayList<>();
 
-    public void addBoat(Bateau newBoat) throws IllegalShipPlacement, NumberOfShipSizeExceeded {
-        if (!isFlotteCanAddBoat(newBoat)) {
+    public void addBoat(Boat newBoat) throws IllegalShipPlacement, NumberOfShipSizeExceeded {
+        if (!isFleetCanAddBoat(newBoat)) {
             throw new NumberOfShipSizeExceeded("This size is already in our army");
         }
-        for (Bateau ourBoat : this.flotte){
+        for (Boat ourBoat : this.boatList){
             if (newBoat.isCrossOverBoat(ourBoat)){
                 throw new IllegalShipPlacement();
             }
         }
 
-        this.flotte.add(newBoat);
+        this.boatList.add(newBoat);
     }
 
-    private boolean isFlotteCanAddBoat(Bateau bateau){
+    private boolean isFleetCanAddBoat(Boat boat){
         boolean result = true;
         int countBoatLenght3 = 0;
 
-        if (this.flotte.size() < 5 && this.flotte.size() > 0){
-            for(Bateau ourBoat : this.flotte){
-                if (bateau.getTaille() == 3){
-                    if (ourBoat.getTaille() == 3){
+        if (this.boatList.size() < 5 && this.boatList.size() > 0){
+            for(Boat ourBoat : this.boatList){
+                if (boat.getBoatSize() == 3){
+                    if (ourBoat.getBoatSize() == 3){
                         countBoatLenght3++;
                         if (countBoatLenght3 >=2){
                             result = false;
                         }
                     }
                 }else{
-                    if (ourBoat.getTaille() == bateau.getTaille()){
+                    if (ourBoat.getBoatSize() == boat.getBoatSize()){
                         result = false;
                     }
                 }
             }
-        }else if(this.flotte.size() >= 5){
+        }else if(this.boatList.size() >= 5){
             result = false;
         }
 
         return result;
     }
 
-    public boolean isContainsBoat(Bateau bateau){
-        return this.flotte.contains(bateau);
+    public boolean isContainsBoat(Boat boat){
+        return this.boatList.contains(boat);
     }
 }
