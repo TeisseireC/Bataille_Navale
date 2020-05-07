@@ -1,9 +1,9 @@
 
-Transversal -> Implementer Junit au projet et faire des tests
-Transversal -> Reduire la taille des méthodes et les optimiser
+Transversal -> Implementer Junit au projet et faire des tests (done)
+Transversal -> Reduire la taille des méthodes et les optimiser (done)
 
 . Créer une flotte (done)
-. Définir la grille (WIP)
+. Définir la grille (done)
 . Ajouter une IA capable de placer des bateaux 
 . Ajouter la possibilité de toucher ou rater un bateau
 . Ajouter la fonctionnalité "Couler" aux bateaux
