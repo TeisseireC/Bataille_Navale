@@ -1,5 +1,6 @@
 package Modele.bateau;
 
+import Exceptions.IllegalCoordinate;
 import Modele.coordonnes.Coordonnes;
 import Modele.coordonnes.Direction;
 
@@ -11,42 +12,64 @@ public class Bateau {
     private List<Coordonnes> coordonnes = new ArrayList<>();
     private int taille;
 
-    public Bateau (Coordonnes startPosition,int taille, Direction direction){
+    public Bateau (Coordonnes startPosition,int taille, Direction direction) throws IllegalCoordinate {
         this.coordonnes.add(startPosition);
         this.taille = taille;
-        setAllCoodinate(direction);
+
+        try {
+            setAllCoodinate(direction);
+        } catch (IllegalCoordinate illegalCoordinate) {
+            throw new IllegalCoordinate();
+        }
     }
 
-    private void setAllCoodinate(Direction direction){
+    private void setAllCoodinate(Direction direction) throws IllegalCoordinate {
         int startAbscisse = this.coordonnes.get(0).getAbscisse();
         int startOrdonnee = this.coordonnes.get(0).getOrdonnee();
 
         for (int i=1; i<this.taille; i++){
             switch (direction){
-                case HAUT : this.coordonnes.add(new Coordonnes(startAbscisse , startOrdonnee - i));
+                case HAUT :
+                    if (startOrdonnee - i < 1){
+                        throw new IllegalCoordinate();
+                    }
+                    this.coordonnes.add(new Coordonnes(startAbscisse , startOrdonnee - i));
                     break;
-                case BAS:  this.coordonnes.add(new Coordonnes(startAbscisse , startOrdonnee + i));
+                case BAS:
+                    if (startOrdonnee + i > 10){
+                        throw new IllegalCoordinate();
+                    }
+                    this.coordonnes.add(new Coordonnes(startAbscisse , startOrdonnee + i));
                     break;
-                case GAUCHE:  this.coordonnes.add(new Coordonnes(startAbscisse - i , startOrdonnee));
+                case GAUCHE:
+                    if (startAbscisse - i < 1){
+                        throw new IllegalCoordinate();
+                    }
+                    this.coordonnes.add(new Coordonnes(startAbscisse - i , startOrdonnee));
                     break;
-                case DROITE:  this.coordonnes.add(new Coordonnes(startAbscisse + i , startOrdonnee));
+                case DROITE:
+                    if (startAbscisse + i > 10){
+                        throw new IllegalCoordinate();
+                    }
+                    this.coordonnes.add(new Coordonnes(startAbscisse + i , startOrdonnee));
                     break;
             }
         }
-
-    }
-
-    public boolean isOnCoordinate(Coordonnes coordonnee) {
-        return this.coordonnes.contains(coordonnee);
-    }
-
-    // Risqué mais je ne vois pas comment faire
-    public List<Coordonnes> getCoordonnes(){
-        return this.coordonnes;
     }
 
     public int getTaille(){
         return this.taille;
+    }
+
+    public boolean isCrossOverBoat(Bateau newBoat){
+        boolean result = true;
+
+        for (int i=0; i<newBoat.coordonnes.size(); i++) {
+            if (Coordonnes.isCoordonneValid(newBoat.coordonnes.get(i))) {
+                result = false;
+            }
+        }
+        return result;
     }
 
     @Override

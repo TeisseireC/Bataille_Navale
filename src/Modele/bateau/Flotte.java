@@ -1,17 +1,25 @@
 package Modele.bateau;
 
+import Exceptions.IllegalShipPlacement;
+import Exceptions.NumberOfShipSizeExceeded;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Flotte {
     private List<Bateau> flotte = new ArrayList<>();
 
-    public boolean addBoat(Bateau bateau) {
-        if (isFlotteCanAddBoat(bateau)){
-            return this.flotte.add(bateau);
-        }else{
-            return false;
+    public void addBoat(Bateau newBoat) throws IllegalShipPlacement, NumberOfShipSizeExceeded {
+        if (!isFlotteCanAddBoat(newBoat)) {
+            throw new NumberOfShipSizeExceeded("This size is already in our army");
         }
+        for (Bateau ourBoat : this.flotte){
+            if (newBoat.isCrossOverBoat(ourBoat)){
+                throw new IllegalShipPlacement();
+            }
+        }
+
+        this.flotte.add(newBoat);
     }
 
     private boolean isFlotteCanAddBoat(Bateau bateau){
@@ -19,16 +27,16 @@ public class Flotte {
         int countBoatLenght3 = 0;
 
         if (this.flotte.size() < 5 && this.flotte.size() > 0){
-            for (int i=0; i<this.flotte.size(); i++){
+            for(Bateau ourBoat : this.flotte){
                 if (bateau.getTaille() == 3){
-                    if (this.flotte.get(i).getTaille() == 3){
+                    if (ourBoat.getTaille() == 3){
                         countBoatLenght3++;
                         if (countBoatLenght3 >=2){
                             result = false;
                         }
                     }
                 }else{
-                    if (this.flotte.get(i).getTaille() == bateau.getTaille()){
+                    if (ourBoat.getTaille() == bateau.getTaille()){
                         result = false;
                     }
                 }
